@@ -133,7 +133,7 @@ async function handleSourcesAndAnswer(question:string) {
           <Hero
             promptValue={promptValue}
             setPromptValue={setPromptValue}
-            handleDisplayResult={handleDisplayResult}
+            handleDisplayResult={() => handleDisplayResult(promptValue)}
             />
             </div>
         )}
@@ -176,7 +176,7 @@ async function handleSourcesAndAnswer(question:string) {
               <InputArea
                 promptValue={promptValue}
                 setPromptValue={setPromptValue}
-                handleDisplayResult={handleDisplayResult}
+                handleDisplayResult={() => handleDisplayResult(promptValue)}
                 disabled={loading}
                 reset={reset}
               />
