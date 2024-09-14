@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import TypeAnimation from './TypeAnimation';
-import { PlaceholdersAndVanishInput } from './ui/placeholders-and-vanish-input';
+
 interface InputAreaProps {
   promptValue: string;
     setPromptValue: React.Dispatch<React.SetStateAction<string>>;

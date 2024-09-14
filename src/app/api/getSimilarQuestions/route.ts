@@ -4,7 +4,7 @@ import { SchemaType } from '@google/generative-ai';
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  let { question } = await request.json();
+  const { question } = await request.json();
 
   const genAI = new GoogleGenerativeAI(
     process.env.GOOGLE_GENERATIVE_AI_API_KEY!
@@ -45,6 +45,6 @@ export async function POST(request: Request) {
     ],
   });
   
-  let sq = similarQuestions.response.text();
+  const sq = similarQuestions.response.text();
 return NextResponse.json(JSON.parse(sq));
 }

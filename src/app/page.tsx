@@ -6,7 +6,7 @@ import {
 } from "eventsource-parser";
 
 import Answer from "@/components/Answer";
-import Footer from "@/components/Footer";
+
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import InputArea from "@/components/InputArea";
@@ -42,11 +42,11 @@ export default function Home() {
   };
   //handlesimilarquestions
   async function handleSimilarQuestions(question:string){
-    let res = await fetch('/api/getSimilarQuestions',{
+    const res = await fetch('/api/getSimilarQuestions',{
       method:'POST',
       body:JSON.stringify({question}),
     })
-    let questions = await res.json();
+    const questions = await res.json();
     setSimilarQuestions(questions);
   }
 
@@ -61,12 +61,12 @@ export default function Home() {
   
 async function handleSourcesAndAnswer(question:string) {
   setIsLoadingSources(true);
-  let sourcesResponse = await  fetch('/api/getSources',{
+  const sourcesResponse = await  fetch('/api/getSources',{
     method:"POST",
     body:JSON.stringify({question}),
   });
   if(sourcesResponse.ok){
-    let sources = await sourcesResponse.json();
+    const sources = await sourcesResponse.json();
     setSources(sources);
 
   }else{

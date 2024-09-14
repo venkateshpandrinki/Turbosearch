@@ -5,10 +5,11 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 export const maxDuration = 45;
 
 export async function POST(request: Request) {
-  let { question, sources } = await request.json();
+  const { question, sources } = await request.json();
 
   console.log("fetching the urls");
-  let finalResults = await Promise.all(
+  const finalResults = await Promise.all(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sources.map(async (result: any) => {
       try {
         const response = await fetchWithTimeout(result.url);
@@ -18,7 +19,7 @@ export async function POST(request: Request) {
 
         const doc = dom.window.document;
         const parsed = new Readability(doc).parse();
-        let parsedContent = parsed
+        const parsedContent = parsed
           ? cleanedText(parsed.textContent)
           : "Nothing found";
        
@@ -106,7 +107,7 @@ export async function POST(request: Request) {
 }
 
 const cleanedText = (text: string) => {
-  let newText = text
+  const newText = text
     .trim()
     .replace(/(\n){4,}/g, "\n\n\n")
     .replace(/\n\n/g, " ")

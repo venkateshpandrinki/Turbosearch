@@ -1,8 +1,8 @@
-import Image from "next/image";
+
 import { FC } from "react";
 import InputArea from "./InputArea";
 import EyeTrackingSVG from "./Eye";
-import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
+
 
 type THeroProps = {
   promptValue: string;
@@ -15,9 +15,9 @@ const Hero: FC<THeroProps> = ({
   setPromptValue,
   handleDisplayResult,
 }) => {
-  const handleClickSuggestion = (value: string) => {
-    setPromptValue(value);
-  };
+  // const handleClickSuggestion = (value: string) => {
+  //   setPromptValue(value);
+  // };
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -78,28 +78,28 @@ const Hero: FC<THeroProps> = ({
   );
 };
 
-type suggestionType = {
-  id: number;
-  name: string;
-  icon: string;
-};
+// type suggestionType = {
+//   id: number;
+//   name: string;
+//   icon: string;
+// };
 
-const suggestions: suggestionType[] = [
-  {
-    id: 1,
-    name: "How does photosynthesis work?",
-    icon: "/img/icon _leaf_.svg",
-  },
-  {
-    id: 2,
-    name: "How can I get a 6 pack in 3 months?",
-    icon: "/img/icon _dumbell_.svg",
-  },
-  {
-    id: 3,
-    name: "Can you explain the theory of relativity?",
-    icon: "/img/icon _atom_.svg",
-  },
-];
+// const suggestions: suggestionType[] = [
+//   {
+//     id: 1,
+//     name: "How does photosynthesis work?",
+//     icon: "/img/icon _leaf_.svg",
+//   },
+//   {
+//     id: 2,
+//     name: "How can I get a 6 pack in 3 months?",
+//     icon: "/img/icon _dumbell_.svg",
+//   },
+//   {
+//     id: 3,
+//     name: "Can you explain the theory of relativity?",
+//     icon: "/img/icon _atom_.svg",
+//   },
+// ];
 
 export default Hero;
