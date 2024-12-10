@@ -18,10 +18,10 @@ const InputArea: FC<InputAreaProps> = ({ promptValue,
   return(
     <form className='mx-auto flex h-[50px]  w-full items-center justify-between rounded-[30px]  bg-[#262626] px-3 '  
     onSubmit={(e) => {
-        e.preventDefault();
+      e.preventDefault();
         if(reset) reset();
         handleDisplayResult();
-    }
+    }  
     }
     >
         <input type="text"

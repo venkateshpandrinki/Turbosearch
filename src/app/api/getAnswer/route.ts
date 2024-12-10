@@ -39,9 +39,9 @@ export async function POST(request: Request) {
 
   //promt
   const mainAnswerPrompt = `
-  Given a user question and some context, please write a clean, concise and accurate answer to the question based on the context. You will be given a set of related contexts to the question, each starting with a reference number like [[citation:x]], where x is a number. Please use the context when crafting your answer.
+You will be given a user question and a set of related contexts, each identified by a reference number like [[citation:x]]. Your task is to write a precise, accurate, and expert answer to the question using only the provided contexts. Assume all required information is included in the contexts, and avoid any introductory " Write a direct, professional response without unnecessary elaboration or repetition, staying within 2048 tokens. Ensure the answer fully addresses the question as clearly and concisely as possible.
+ make the output as answer to the question no extra information like "The answer to your question is" or "The answer is" just the answer or based on the provided info dont start with them
 
-  Your answer must be correct, accurate and written by an expert using an unbiased and professional tone. Please limit to 1024 tokens. Do not give any information that is not related to the question, and do not repeat. Say "information is missing on" followed by the related topic, if the given context do not provide sufficient information. or give your best answer.
 
   Here are the set of contexts:
 

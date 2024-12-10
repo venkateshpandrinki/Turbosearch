@@ -110,7 +110,7 @@ async function handleSourcesAndAnswer(question:string) {
     }
   };
 
-  // https://web.dev/streams/#the-getreader-and-read-methods
+ 
   const reader = data.getReader();
   const decoder = new TextDecoder();
   const parser = createParser(onParse);
@@ -184,7 +184,7 @@ async function handleSourcesAndAnswer(question:string) {
           </div>
         )}
       </main>
-      {/* <Footer /> */}
+      
     </>
   );
 }
